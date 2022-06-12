@@ -24,8 +24,14 @@
     ...0[]
   ];
   
-  
-  type Join<K, P, H extends string = "/"> = K extends string | number
+      /**
+ * Get the union of two strings by a separator
+ * @constructor
+ * @param {string} firstString - first string.
+ * @param {string} secondString - second string.
+ * @param {string} separator - Default is "/", separator that separates the two strings.
+ */
+  export type Join<K, P, H extends string = "/"> = K extends string | number
     ? P extends string | number
       ? number extends P
         ? `${K}`
@@ -64,6 +70,8 @@
     K extends string = "/",
     D extends number = 10
   > = Leaves<T, D, K>;
+
+
   
   
       /**
@@ -78,9 +86,6 @@
     K extends string = "/",
     D extends number = 10
   > = Paths<T, D, K>;
-
-  const tt: NestedKeys<{ciao: string, prova: {p: string}}> = "ciao"
-  const tttt: NestedPathKeys<{ciao: string, prova: {p: string}}> = "prova"
   
   
   
