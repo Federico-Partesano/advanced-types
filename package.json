@@ -1,8 +1,8 @@
 {
   "name": "advanced-types",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "",
-  "main": "index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "prepublish": "tsc",
     "start": "tsc && node dist/index.js",
