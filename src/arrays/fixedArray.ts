@@ -33,4 +33,5 @@ export type IndexOfArrayByValue<T extends readonly any[], V  ,K extends Array<nu
  * @constructor
  * @param {array} array Array to be processed.
  */
-export type IndexOf<T extends readonly any[], Acc extends number[] = []> = T["length"] extends Acc["length"] ? Acc[number] : IndexOf<T, [...Acc, Acc["length"]]>
+export type IndexOf<T extends readonly any[]> = Exclude<Partial<T>["length"], T["length"]>
+
