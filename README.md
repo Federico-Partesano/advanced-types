@@ -15,6 +15,8 @@ type list:
 * 'Join': Get the union of two strings by a separator.
 * 'NestedKeys': Get a string obtained from an object's key tree by following its complete path.
 * 'NestedPathKeys': Get a string obtained from an object's key tree by following its complete and incomplete path 
+* 'RestrictedChars': Get string with only allowed chars.
+* 'CheckMaxLength': Check if string respect max length
 ### object: 
 * 'ValueOf': Get values type of object.
 * 'Nullable': Get object with all values with possible value null or undefined.
