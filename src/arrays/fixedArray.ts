@@ -1,3 +1,5 @@
+import { SplitChars, SplitCharsArray } from "../strings/Validations";
+
 type Grow<T, A extends Array<T>> = ((x: T, ...xs: A) => void) extends ((...a: infer X) => void) ? X : never;
 type GrowToSize<T, A extends Array<T>, N extends number> = { 0: A, 1: GrowToSize<T, Grow<T, A>, N> }[A['length'] extends N ? 0 : 1];
 
@@ -28,10 +30,36 @@ export type ValuesArray<T extends readonly  any[]> =  T[number];
 export type IndexOfArrayByValue<T extends readonly any[], V  ,K extends Array<number> = [], L extends Array<any> = []> = T["length"] extends K["length"] ? L[number] : T[K["length"]] extends V  ? IndexOfArrayByValue<T,V,[...K, K["length"]], [...L, K["length"]]> :  IndexOfArrayByValue<T,V,[...K, K["length"]], L>
 
 
+    /**
+ * Get a string from an array of strings
+ * @constructor
+ * @param {string[]} array Array to be processed.
+ */
+
+export type ArrayToString<T extends string[], I extends number[] = [], S extends string = ""> =  I["length"] extends T["length"] ? S : ArrayToString<T, [...I, I["length"]], `${S}${T[I["length"]]}`>
+
+
+
    /**
  * Get all index of readonly array. (use IndexOfArrayByValue if want get all index of element of readonly with specific type)
  * @constructor
  * @param {array} array Array to be processed.
  */
 export type IndexOf<T extends readonly any[]> = Exclude<Partial<T>["length"], T["length"]>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

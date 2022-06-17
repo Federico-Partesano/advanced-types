@@ -9,6 +9,7 @@ type list:
 * 'ValuesArray':  Get all values of readonly array.
 * 'IndexOfArrayByValue':  Get all index of element of readonly with specific type.
 * 'IndexOf':  Get all index of readonly array.
+* 'ArrayToString':  Get a string from an array of strings.
 ### number:
 * 'Enumerate': Get a range of numbers starting from 0.
 * 'Range': Get a range of numbers. 
@@ -17,7 +18,9 @@ type list:
 * 'NestedKeys': Get a string obtained from an object's key tree by following its complete path.
 * 'NestedPathKeys': Get a string obtained from an object's key tree by following its complete and incomplete path 
 * 'RestrictedChars': Get string with only allowed chars.
-* 'CheckMaxLength': Check if string respect max length
+* 'CheckMaxLength': Check if string respect max length.
+* 'SnakeCaseToCamelCase': Get a string snake case in camel case.
+
 ### object: 
 * 'ValueOf': Get values type of object.
 * 'Nullable': Get object with all values with possible value null or undefined.

@@ -1,3 +1,4 @@
+import { ArrayToString } from "../arrays/fixedArray";
 
     export type Lower = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z';
     export type Upper = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | '' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z';
@@ -53,6 +54,18 @@
  */
     export type CheckMaxLength<T extends string, L extends number, Y = T> =
       SplitCharsArray<T>[L] extends undefined ? Y : never;
+
     
     
     
+      // export type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
+      // export type TypeXOR<T, U> = (T | U) extends object ? (Without<T, U> & U) | (Without<U, T> & T) : T | U;
+
+
+          /**
+ * Get a string snake case in camel case
+ * @constructor
+ * @param {string[]} array Array to be processed.
+ */
+
+export type SnakeCaseToCamelCase<T extends string,A extends string[] = [] ,I extends number[] = [] ,Prev extends Boolean = false> = SplitCharsArray<T>["length"] extends I["length"] ? ArrayToString<A> : SplitCharsArray<T>[I["length"]] extends "_" ?  SnakeCaseToCamelCase<T, A, [...I, I["length"]], true> : true extends Prev ? SnakeCaseToCamelCase<T, [...A, Uppercase<SplitCharsArray<T>[I["length"]]>], [...I, I["length"]], false> : SnakeCaseToCamelCase<T, [...A, SplitCharsArray<T>[I["length"]]], [...I, I["length"]], false>
