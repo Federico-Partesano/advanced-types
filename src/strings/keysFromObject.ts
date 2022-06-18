@@ -31,7 +31,7 @@
  * @param {string} secondString - second string.
  * @param {string} separator - Default is "/", separator that separates the two strings.
  */
-  export type Join<K, P, H extends string = "/"> = K extends string | number
+  export type Join<K, P, H extends string = ""> = K extends string | number
     ? P extends string | number
       ? number extends P
         ? `${K}`

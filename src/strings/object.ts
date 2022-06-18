@@ -15,7 +15,7 @@ export type ValueOf<T,K extends keyof T> = T[K];
 
  */
 
-      
+
 
 export type Nullable<T extends object> = {
     [P in keyof T]: T[P] | null | undefined ;

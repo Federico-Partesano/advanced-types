@@ -36,9 +36,7 @@ export type IndexOfArrayByValue<T extends readonly any[], V  ,K extends Array<nu
  * @param {string[]} array Array to be processed.
  */
 
-export type ArrayToString<T extends string[], I extends number[] = [], S extends string = ""> =  I["length"] extends T["length"] ? S : ArrayToString<T, [...I, I["length"]], `${S}${T[I["length"]]}`>
-
-
+export type ArrayToString<T extends readonly string[], I extends number[] = [], S extends string = ""> =  I["length"] extends T["length"] ? S : ArrayToString<T, [...I, I["length"]], `${S}${T[I["length"]]}`>
 
    /**
  * Get all index of readonly array. (use IndexOfArrayByValue if want get all index of element of readonly with specific type)
