@@ -1,6 +1,9 @@
   
 
 # advanced-types
+
+Advanced type for Typescript.
+
 ### TypeScript required! [ npm install -g typescript ]
 ## If you have the desire to add any particular type you can apply at this [link](http://macheoo.altervista.org/advancedtypes/index.php), if possible it will be satisfied as soon as possible.
 ## Installation
